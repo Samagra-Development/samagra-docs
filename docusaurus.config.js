@@ -4,44 +4,29 @@ const fetch = require('node-fetch');
 
 const VERSIONS_JSON = require('./versions.json');
 
-const BASE_URL = '/docs';
+const BASE_URL = '/';
 
 module.exports = {
-  title: 'Samagra Documentation',
+  title: 'Documentation',
   tagline:
-    'tag line',
-  url: 'https://turbo-vercel-testjjjj.vercel.app/',
+    'Genralized documentation',
+  url: 'https://samagra-docs.vercel.app',
   baseUrl: `/`,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    locales: ['en'],
     localeConfigs: {
-      en: { label: 'English' },
-      ja: { label: '日本語' },
+      en: { label: 'English' }
     },
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/meta/favicon-96x96.png',
-  organizationName: 'ionic-team',
-  projectName: 'ionic-docs',
+  organizationName: 'Samagra Governance',
+  projectName: 'samagra-docs',
   themeConfig: {
-    // metadata: [
-    //   { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
-    
-    //   {
-    //     name: 'fb:page_id',
-    //     content: '1321836767955949',
-    //   },
-    //   {
-    //     name: 'og:type',
-    //     content: 'website',
-    //   },
-    //   {
-    //     name: 'og:site_name',
-    //     content: 'Ionic Framework Docs',
-    //   },
-    // ],
+    metadata: [
+    ],
     colorMode: {
       defaultMode: 'light',
     },
@@ -53,140 +38,20 @@ module.exports = {
         srcDark: '/logos/dark-logo.png',
         href: '/',
         target: '_self',
-        width: "140px",
-        height: "45px"
+        width: 140,
+        height: 45
       },
       items: [
         {
           type: 'doc',
-          docId: 'index',
-          label: 'Guide',
-          position: 'left',
+          docId: 'engineering',
+          label: 'Engineering',
+          position: 'left'
         },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   position: 'right',
-        //   dropdownItemsAfter: [
-           
-        //     { to: 'hostedlink', label: 'v1', target: '_blank' },
-        //   ],
-        //   // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-        //   dropdownActiveClassDisabled: true,
-        // },
-        // {
-        //   type: 'search',
-        //   position: 'right',
-        // },
-        // {
-        //   label: 'Community',
-        //   position: 'right',
-        //   items: [
-        //     {
-        //       href: 'https://ionicframework.com/community',
-        //       label: 'Community Hub',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://forum.ionicframework.com/',
-        //       label: 'Forum',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://www.meetup.com/topics/ionic-framework/',
-        //       label: 'Meetups',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://blog.ionicframework.com/',
-        //       label: 'Blog',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     // {
-        //     //   href: 'https://twitter.com/ionicframework',
-        //     //   label: 'Twitter',
-        //     //   target: '_blank',
-        //     //   rel: null,
-        //     // },
-        //   ],
-        //   className: 'navbar__link--community',
-        // },
-        // {
-        //   label: 'Support',
-        //   position: 'right',
-        //   items: [
-        //     {
-        //       href: 'https://ionicframework.com/support',
-        //       label: 'Help Center',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://ionic.zendesk.com/',
-        //       label: 'Customer Support',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://ionicframework.com/advisory',
-        //       label: 'Enterprise Advisory',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //   ],
-        //   className: 'navbar__link--support',
-        // },
         {
           type: 'separator',
           position: 'right',
-        },
-        // {
-        //   type: 'localeDropdown',
-        //   position: 'right',
-        //   dropdownItemsBefore: [],
-        //   dropdownItemsAfter: [
-        //     {
-        //       href: 'https://ionicframework.com/translate',
-        //       label: 'Translate',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //   ],
-        //   className: 'icon-link language navbar__item',
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'twitter logo',
-        //     src: `/logos/twitter.svg`,
-        //     href: 'https://twitter.com/Ionicframework',
-        //     target: '_blank',
-        //   },
-        // },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'github logo',
-            src: `/logos/github.svg`,
-            href: 'https://github.com/Samagra-Development',
-            target: '_blank',
-          },
-        },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'discord logo',
-        //     src: `/logos/discord.svg`,
-        //     href: 'https://ionic.link/discord',
-        //     target: '_blank',
-        //   },
-        // },
+        }
       ],
     },
     tagManager: {
@@ -227,7 +92,7 @@ module.exports = {
             return 'https://crowdin.com/project/ionic-docs';
           }
           if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/Samagra-Development/samagra-docs/tree/main/docs/api/${match[1]}.md`;
+            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
           }
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
@@ -238,13 +103,13 @@ module.exports = {
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
-          return `https://github.com/Samagra-Development/samagra-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
         lastVersion: 'current',
         versions: {
           current: {
-            label: 'v2',
+            label: 'v7',
           },
         },
       },

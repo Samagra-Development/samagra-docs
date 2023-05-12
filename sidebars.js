@@ -4,15 +4,25 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['index', 'intro/environment', 'intro/cli'],
+      items: ['engineering'],
+    },  
+    {
+      type: 'category',
+      label: 'Engineering Process',
+      collapsed: false,
+      items: ['eng/design','eng/development','eng/testing','eng/devops'],
     },
-    
-  ],
-
-  // api: [{
-  //   type: 'category',
-  //   label: 'Getting Started',
-  //   collapsed: false,
-  //   items: ['components'],
-  // }],
+    {
+      type: 'category',
+      label: 'Project',
+      collapsed: false,
+      items: ['projects/familyid','projects/konnect','projects/samiksha','projects/samarth'],
+    },
+    {
+      type: 'category',
+      label: 'DPG',
+      collapsed: false,
+      items: ['dpg/samagradpg', 'dpg/sunbirddpg'],
+    },
+  ]
 };
