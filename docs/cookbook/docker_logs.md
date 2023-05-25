@@ -55,13 +55,13 @@ Let's break down the Docker Compose configuration step by step for a beginner:
 
 - `ports: "12201:12201/udp"`: This line maps the container's UDP port 12201 to the host's UDP port 12201. It allows external systems to send log messages to Logstash.
 
-- `volumes`: - ./pipeline:/usr/share/logstash/pipeline: This line mounts the ./pipeline directory from the host machine into the container at the path /usr/share/logstash/pipeline. It enables you to provide Logstash configuration files.
+- `volumes: -./pipeline:/usr/share/logstash/pipeline`: This line mounts the ./pipeline directory from the host machine into the container at the path /usr/share/logstash/pipeline. It enables you to provide Logstash configuration files.
 
 - `command`: logstash -f /usr/share/logstash/pipeline/: This command is executed when the container starts. It runs Logstash and specifies the Logstash configuration file to be used (/usr/share/logstash/pipeline/).
 
 - `plop`: This is the second service defined. It uses the Alpine Linux base image, which is a lightweight distribution commonly used in Docker containers.
 
-- `command`: /bin/sh -c "while true; do echo My Message; sleep 1; done;": This command is executed when the container starts. It runs an infinite loop that prints the message "My Message" every second.
+- `command: /bin/sh -c "while true; do echo My Message; sleep 1; done;"`: This command is executed when the container starts. It runs an infinite loop that prints the message "My Message" every second.
 
 Step 4: Save and close the docker-compose.yml file (Ctrl + X, Y, Enter).
 
