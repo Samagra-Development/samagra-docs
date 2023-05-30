@@ -24,5 +24,11 @@ module.exports = {
       collapsed: false,
       items: ['dpg/samagradpg', 'dpg/sunbirddpg'],
     },
+    {
+      type: 'category',
+      label: 'Cookbook',
+      collapsed: false,
+      items: ['cookbook/docker_logs'],
+    },    
   ]
 };
